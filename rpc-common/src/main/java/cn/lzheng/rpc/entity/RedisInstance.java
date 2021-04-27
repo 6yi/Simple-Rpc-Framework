@@ -11,23 +11,28 @@ import lombok.Data;
  * @Description:  redis注册中心获取的实例
  */
 
-@Data
+
 @Builder
+@Data
 public class RedisInstance {
 
     String host;
 
-    int port;
+    Integer port;
 
     /*
     * 权重
     * */
-    int weight;
+    Integer weight;
 
     /*
     * 是否下线
     * */
 
-    boolean health;
+    Boolean health;
+
+    public RpcInstance toInstance(){
+        return RpcInstance.builder().host(host).port(port).weight(weight).health(health).build();
+    }
 
 }

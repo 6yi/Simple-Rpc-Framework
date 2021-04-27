@@ -5,15 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97ddf3ac-3680-4be4-b571-8ff4ad4613ac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/entity/RedisInstance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/utils/RedisUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/handler/RequestHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/registry/Redis/RedisRegistry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/registry/ServiceRegistry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/JDKSock/server/SocketRequestHandlerThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/JDKSock/server/SocketServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/RpcServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-common/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/entity/RpcInstance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/enumeration/RpcError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/enumeration/SerializerCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/exception/RpcException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/exception/SerializeException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/loadbalancer/LoadBalancer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/loadbalancer/RandomLoadBalancer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/registry/Redis/RedisDiscovery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/registry/ServiceDiscovery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/serializer/CommonSerializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/serializer/KryoSerializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/entity/RedisInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/entity/RedisInstance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/registry/Redis/RedisRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/registry/Redis/RedisRegistry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/JDKSock/client/SocketClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/JDKSock/client/SocketClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,6 +74,12 @@
     <property name="project.structure.side.proportion" value="0.11001098" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.lzheng.rpc.enumeration" />
+      <recent name="cn.lzheng.rpc.loadbalancer" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
@@ -93,7 +104,7 @@
       <option name="presentableId" value="Default" />
       <updated>1619332191384</updated>
       <workItem from="1619332193040" duration="5815000" />
-      <workItem from="1619362790962" duration="12191000" />
+      <workItem from="1619362790962" duration="23918000" />
     </task>
     <servers />
   </component>

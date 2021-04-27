@@ -17,15 +17,16 @@ import java.net.InetSocketAddress;
 
 
 public class RedisRegistry implements ServiceRegistry {
+
     private static final Logger logger = LoggerFactory.getLogger(RedisRegistry.class);
 
     @Override
     public void registry(String serviceName, InetSocketAddress inetSocketAddress) {
         try {
-
+            RedisUtil.registerService(serviceName, inetSocketAddress);
         } catch (Exception e) {
             logger.error("注册服务时有错误发生:", e);
-
+            throw new RuntimeException(e);
         }
     }
 }
