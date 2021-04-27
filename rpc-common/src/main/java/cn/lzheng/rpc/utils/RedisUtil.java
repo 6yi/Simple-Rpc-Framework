@@ -44,12 +44,12 @@ public class RedisUtil {
             ObjectMapper objectMapper = new ObjectMapper();
             RedisInstance redisInstance = RedisInstance
                     .builder()
-                    .host(address.getHostName())
+                    .host(address.getHostString())
                     .port(address.getPort())
                     .build();
 
             jedis.hset(serviceName,
-                    address.getHostName()+":"+address.getPort(),
+                    address.getHostString()+":"+address.getPort(),
                     objectMapper.writeValueAsString(redisInstance));
 
             serviceNames.add(serviceName);

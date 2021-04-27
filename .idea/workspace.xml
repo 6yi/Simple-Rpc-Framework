@@ -5,21 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97ddf3ac-3680-4be4-b571-8ff4ad4613ac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/entity/RpcInstance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/enumeration/RpcError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/enumeration/SerializerCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/exception/RpcException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/exception/SerializeException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/loadbalancer/LoadBalancer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/loadbalancer/RandomLoadBalancer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/registry/Redis/RedisDiscovery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/registry/ServiceDiscovery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/serializer/CommonSerializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/serializer/KryoSerializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/enumeration/PackageType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/utils/RpcObjectReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/utils/RpcObjectWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-server-test/src/test/java/RegistryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/entity/RedisInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/entity/RedisInstance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/entity/RpcInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/entity/RpcInstance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/utils/RedisUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/utils/RedisUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpc-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/registry/Redis/RedisRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/registry/Redis/RedisRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/registry/Redis/RedisDiscovery.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/registry/Redis/RedisDiscovery.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/JDKSock/client/SocketClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/JDKSock/client/SocketClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-server-test/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-server-test/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -72,10 +69,11 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15332031" />
     <property name="project.structure.side.proportion" value="0.11001098" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
       <recent name="cn.lzheng.rpc.enumeration" />
       <recent name="cn.lzheng.rpc.loadbalancer" />
     </key>
@@ -94,6 +92,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RegistryTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rpc-core" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RegistryTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.RegistryTest.test" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -104,7 +117,7 @@
       <option name="presentableId" value="Default" />
       <updated>1619332191384</updated>
       <workItem from="1619332193040" duration="5815000" />
-      <workItem from="1619362790962" duration="23918000" />
+      <workItem from="1619362790962" duration="34360000" />
     </task>
     <servers />
   </component>

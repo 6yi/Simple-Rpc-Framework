@@ -37,7 +37,8 @@ public class RedisDiscovery implements ServiceDiscovery {
         try{
             List<RpcInstance> instances = RedisUtil
                     .getAllInstance(serviceName)
-                    .stream().map(h->h.toInstance()).collect(Collectors.toList());
+                    .stream().map(h->h.toInstance())
+                    .collect(Collectors.toList());
             if(instances.size()==0){
                 logger.error("找不到对应的服务: " + serviceName);
             }

@@ -1,7 +1,9 @@
 package cn.lzheng.rpc.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @ClassName RedisInstance
@@ -14,6 +16,8 @@ import lombok.Data;
 
 @Builder
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class RedisInstance {
 
     String host;

@@ -1,7 +1,9 @@
 package cn.lzheng.rpc.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @ClassName Instance
@@ -11,8 +13,11 @@ import lombok.Data;
  * @Description:
  */
 
+
 @Builder
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class RpcInstance {
 
     String host;
