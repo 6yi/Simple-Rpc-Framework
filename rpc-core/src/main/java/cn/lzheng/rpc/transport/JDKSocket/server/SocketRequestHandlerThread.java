@@ -1,4 +1,4 @@
-package cn.lzheng.rpc.transport.JDKSock.server;
+package cn.lzheng.rpc.transport.JDKSocket.server;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

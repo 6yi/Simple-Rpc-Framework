@@ -1,4 +1,4 @@
-package cn.lzheng.rpc.transport.JDKSock.client;
+package cn.lzheng.rpc.transport.JDKSocket.client;
 
 import cn.lzheng.rpc.entity.RpcRequest;
 import cn.lzheng.rpc.entity.RpcResponse;
