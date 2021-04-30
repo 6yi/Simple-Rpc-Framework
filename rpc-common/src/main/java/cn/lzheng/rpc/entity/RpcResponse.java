@@ -36,10 +36,11 @@ public class RpcResponse<T> implements Serializable {
     * */
     private T data;
 
-    public static <T> RpcResponse<T> success(T data){
+    public static <T> RpcResponse<T> success(T data,String requestId){
         RpcResponse<T> rpcResponse = new RpcResponse<>();
         rpcResponse.setStatusCode(200);
         rpcResponse.setData(data);
+        rpcResponse.setRequestId(requestId);
         return rpcResponse;
     }
 

@@ -55,7 +55,6 @@ public class RpcObjectReader {
         int packageLen = bytesToInt(numberBytes);
         byte[] data = new byte[packageLen];
         in.read(data);
-
         return serializer.deserialize(data,packageClass);
     }
 
