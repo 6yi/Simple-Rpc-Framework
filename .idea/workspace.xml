@@ -5,16 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97ddf3ac-3680-4be4-b571-8ff4ad4613ac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/factory/ThreadPoolFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/entity/RpcRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/entity/RpcRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/entity/RpcResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/entity/RpcResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/annotation/RpcService.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/annotation/RpcService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/handler/RequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/handler/RequestHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-client-test/src/test/java/test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/RpcClientProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-client-test/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-client-test/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-common/target/classes/cn/lzheng/rpc/entity/RpcRequest$RpcRequestBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-common/target/classes/cn/lzheng/rpc/entity/RpcRequest$RpcRequestBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-common/target/classes/cn/lzheng/rpc/entity/RpcRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-common/target/classes/cn/lzheng/rpc/entity/RpcRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-common/target/classes/cn/lzheng/rpc/entity/RpcResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-common/target/classes/cn/lzheng/rpc/entity/RpcResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/registry/Redis/RedisDiscovery.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/registry/Redis/RedisDiscovery.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/AbstractRpcServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/AbstractRpcServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/JDKSocket/server/SocketRequestHandlerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/JDKSocket/server/SocketRequestHandlerThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/JDKSocket/server/SocketServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/JDKSocket/server/SocketServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/utils/RpcObjectReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/utils/RpcObjectReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/RpcClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/RpcClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/target/classes/cn/lzheng/rpc/handler/RequestHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/target/classes/cn/lzheng/rpc/handler/RequestHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/target/classes/cn/lzheng/rpc/registry/Redis/RedisDiscovery.class" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/target/classes/cn/lzheng/rpc/registry/Redis/RedisDiscovery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/target/classes/cn/lzheng/rpc/transport/JDKSock/client/SocketClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/target/classes/cn/lzheng/rpc/transport/JDKSock/server/SocketRequestHandlerThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/target/classes/cn/lzheng/rpc/transport/JDKSock/server/SocketServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/target/classes/cn/lzheng/rpc/transport/RpcClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/target/classes/cn/lzheng/rpc/transport/RpcClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/target/classes/cn/lzheng/rpc/transport/utils/RpcObjectReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/target/classes/cn/lzheng/rpc/transport/utils/RpcObjectReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/target/test-classes/RegistryTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-server-test/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-server-test/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-server-test/src/main/java/cn/lzheng/test/HelloServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-server-test/src/main/java/cn/lzheng/test/HelloServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-server-test/src/test/java/RegistryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-server-test/src/test/java/RegistryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +89,21 @@
       <recent name="cn.lzheng.rpc.loadbalancer" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.test">
+    <configuration name="RegistryTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RegistryTest" />
+      <module name="rpc-server-test" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test" />
+      <module name="rpc-client-test" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -104,6 +129,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.RegistryTest" />
+        <item itemvalue="Application.test" />
         <item itemvalue="JUnit.RegistryTest.test" />
       </list>
     </recent_temporary>
@@ -117,7 +144,7 @@
       <option name="presentableId" value="Default" />
       <updated>1619332191384</updated>
       <workItem from="1619332193040" duration="5815000" />
-      <workItem from="1619362790962" duration="53529000" />
+      <workItem from="1619362790962" duration="58519000" />
     </task>
     <servers />
   </component>

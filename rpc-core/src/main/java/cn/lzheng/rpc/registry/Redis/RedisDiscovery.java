@@ -1,6 +1,5 @@
 package cn.lzheng.rpc.registry.Redis;
 
-import cn.lzheng.rpc.entity.RedisInstance;
 import cn.lzheng.rpc.entity.RpcInstance;
 import cn.lzheng.rpc.loadbalancer.LoadBalancer;
 import cn.lzheng.rpc.loadbalancer.RandomLoadBalancer;

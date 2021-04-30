@@ -1,5 +1,6 @@
 package cn.lzheng.test;
 
+import cn.lzheng.rpc.annotation.RpcService;
 import cn.lzheng.rpc.api.HelloObject;
 import cn.lzheng.rpc.api.HelloService;
 import org.slf4j.Logger;
@@ -13,7 +14,7 @@ import org.slf4j.LoggerFactory;
  * @Description:
  */
 
-
+@RpcService
 public class HelloServiceImpl implements HelloService {
     private static final Logger logger = LoggerFactory.getLogger(HelloServiceImpl.class);
 

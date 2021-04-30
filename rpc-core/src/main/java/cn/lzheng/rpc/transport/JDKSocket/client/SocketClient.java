@@ -20,7 +20,6 @@ import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 
-import static cn.lzheng.rpc.serializer.CommonSerializer.DEFAULT_SERIALIZER;
 
 
 /**

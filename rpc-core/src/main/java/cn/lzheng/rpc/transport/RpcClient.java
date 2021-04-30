@@ -1,6 +1,7 @@
 package cn.lzheng.rpc.transport;
 
 import cn.lzheng.rpc.entity.RpcRequest;
+import cn.lzheng.rpc.serializer.CommonSerializer;
 
 /**
  * @ClassName RpcClient
@@ -12,6 +13,7 @@ import cn.lzheng.rpc.entity.RpcRequest;
 
 public interface RpcClient {
 
+    int DEFAULT_SERIALIZER = CommonSerializer.KRYO_SERIALIZER;
 
     Object sendRequest(RpcRequest rpcRequest);
 

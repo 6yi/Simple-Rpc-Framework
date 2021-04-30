@@ -37,7 +37,7 @@ public abstract class AbstractRpcServer implements RpcServer{
      * @return
      * @Description  扫描服务
      **/
-    public void scanServices() {
+    protected void scanServices() {
         String mainClassName = ReflectUtil.getMainClassName();
         Class<?> startClass;
         try {

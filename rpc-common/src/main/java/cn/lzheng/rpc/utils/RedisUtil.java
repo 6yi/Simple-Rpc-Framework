@@ -103,6 +103,7 @@ public class RedisUtil {
             while(iterator.hasNext()){
                 String serviceName = iterator.next();
                 try{
+                    logger.error("注销服务 {}", serviceName);
                     jedis.hdel(serviceName,host+":"+port);
                 }catch (Exception e){
                     logger.error("注销服务 {} 失败", serviceName, e);
