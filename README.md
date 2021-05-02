@@ -26,10 +26,53 @@ Simple-RPC-Framework 是一款基于声哥的RPC框架拓展的多注册中心RP
 
 | 字段            | 解释                                                         |
 | :-------------- | :----------------------------------------------------------- |
-| Magic Number    | 魔数，表识一个 MRF 协议包，0xCAFEBABE                        |
+| Magic Number    | 魔数，表识一个 SRF 协议包，0xCAFEBABE                        |
 | Package Type    | 包类型，标明这是一个调用请求还是调用响应                     |
 | Serializer Type | 序列化器类型，标明这个包的数据的序列化方式                   |
 | Data Length     | 数据字节的长度                                               |
 | Data Bytes      | 传输的对象，通常是一个`RpcRequest`或`RpcClient`对象，取决于`Package Type`字段，对象的序列化方式取决于`Serializer Type`字段。 |
 
+## 使用
 
+### 定义调用接口
+```java
+public interface HelloService {
+    String hello(HelloObject object);
+}
+```
+
+### 在服务提供侧实现该接口
+```java
+@RpcService
+public class HelloServiceImpl implements HelloService {
+    @Override
+    public String hello(HelloObject object) {
+        logger.info("接收到消息：{}", object.getMessage());
+        return object.getMessage();
+    }
+}
+```
+### 编写服务提供者
+```java
+@RpcServiceScans("cn.lzheng.test")
+public class RegistryTest {
+    public static void main(String[] args) {
+        SocketServer socketServer = new SocketServer("127.0.0.1", 6080);
+        socketServer.start();
+    }
+}
+```
+使用默认的nacos为注册中心,kryo序列化
+
+### 在服务消费侧远程调用
+```java
+public class test {
+    public static void main(String[] args) {
+        SocketClient socketClient = new SocketClient();
+        RpcClientProxy rpcClientProxy = new RpcClientProxy(socketClient);
+        HelloService proxy = rpcClientProxy.getProxy(HelloService.class);
+        HelloObject helloObject = new HelloObject(12, "??");
+        System.out.println(proxy.hello(helloObject));
+    }
+}
+```

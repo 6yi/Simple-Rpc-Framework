@@ -15,12 +15,10 @@ import cn.lzheng.rpc.transport.RpcClientProxy;
 
 public class test {
     public static void main(String[] args) {
-
         SocketClient socketClient = new SocketClient();
         RpcClientProxy rpcClientProxy = new RpcClientProxy(socketClient);
         HelloService proxy = rpcClientProxy.getProxy(HelloService.class);
         HelloObject helloObject = new HelloObject(12, "??");
         System.out.println(proxy.hello(helloObject));
-
     }
 }

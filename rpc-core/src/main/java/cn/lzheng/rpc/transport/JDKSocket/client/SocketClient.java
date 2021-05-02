@@ -7,7 +7,6 @@ import cn.lzheng.rpc.enumeration.RpcError;
 import cn.lzheng.rpc.exception.RpcException;
 import cn.lzheng.rpc.loadbalancer.LoadBalancer;
 import cn.lzheng.rpc.loadbalancer.RandomLoadBalancer;
-import cn.lzheng.rpc.registry.Redis.RedisDiscovery;
 import cn.lzheng.rpc.registry.ServiceDiscovery;
 import cn.lzheng.rpc.serializer.CommonSerializer;
 import cn.lzheng.rpc.transport.RpcClient;

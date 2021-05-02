@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97ddf3ac-3680-4be4-b571-8ff4ad4613ac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/utils/RedisUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/utils/RedisUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/registry/Nacos/NacosRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/registry/Nacos/NacosRegistry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/registry/Redis/RedisRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/registry/Redis/RedisRegistry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/registry/ServiceRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/registry/ServiceRegistry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/annotation/RpcReference.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/AbstractRpcClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/JDKSocket/client/SocketClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/JDKSocket/client/SocketClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/JDKSocket/server/SocketServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/JDKSocket/server/SocketServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-server-test/src/main/java/cn/lzheng/test/HelloServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-server-test/src/main/java/cn/lzheng/test/HelloServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,10 +19,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="AnnotationType" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="AnnotationType" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -128,7 +127,7 @@
       <updated>1619332191384</updated>
       <workItem from="1619332193040" duration="5815000" />
       <workItem from="1619362790962" duration="62210000" />
-      <workItem from="1619935586768" duration="12967000" />
+      <workItem from="1619935586768" duration="15600000" />
     </task>
     <servers />
   </component>
