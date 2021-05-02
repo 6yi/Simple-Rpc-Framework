@@ -21,7 +21,7 @@ import java.net.UnknownHostException;
 public class RegistryTest {
 
     public static void main(String[] args) {
-        SocketServer socketServer = new SocketServer("127.0.0.1", 6080, CommonSerializer.KRYO_SERIALIZER);
+        SocketServer socketServer = new SocketServer("127.0.0.1", 6080);
         socketServer.start();
     }
 

@@ -21,7 +21,6 @@ import java.net.InetSocketAddress;
 import java.net.Socket;
 
 
-
 /**
  * @ClassName SocketClient
  * @Author 6yi
@@ -37,22 +36,22 @@ public class SocketClient implements RpcClient {
 
     private final CommonSerializer serializer;
 
-    private int TIME_OUT = 500;
+    private int TIME_OUT = 1500;
 
-    public SocketClient() {
-        this(DEFAULT_SERIALIZER, new RandomLoadBalancer());
+    public SocketClient(){
+        this(DEFAULT_REGISTRY,DEFAULT_SERIALIZER, new RandomLoadBalancer());
     }
 
     public SocketClient(LoadBalancer loadBalancer) {
-        this(DEFAULT_SERIALIZER, loadBalancer);
+        this(DEFAULT_REGISTRY,DEFAULT_SERIALIZER, loadBalancer);
     }
 
-    public SocketClient(Integer serializer) {
-        this(serializer, new RandomLoadBalancer());
+    public SocketClient(Integer discovery,Integer serializer) {
+        this(discovery,serializer, new RandomLoadBalancer());
     }
 
-    public SocketClient(Integer serializer, LoadBalancer loadBalancer) {
-        this.serviceDiscovery = new RedisDiscovery(loadBalancer);
+    public SocketClient(Integer discovery,Integer serializer, LoadBalancer loadBalancer) {
+        this.serviceDiscovery = ServiceDiscovery.getByCode(discovery,loadBalancer);
         this.serializer = CommonSerializer.getByCode(serializer);
     }
 

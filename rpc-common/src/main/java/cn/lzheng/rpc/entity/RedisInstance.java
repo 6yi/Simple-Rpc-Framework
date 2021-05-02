@@ -27,7 +27,7 @@ public class RedisInstance {
     /*
     * 权重
     * */
-    Integer weight;
+    Double weight;
 
     /*
     * 是否下线

@@ -5,26 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97ddf3ac-3680-4be4-b571-8ff4ad4613ac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/rpc-client-test/src/test/java/test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/RpcClientProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/enumeration/RegistryCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/utils/NacosUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/registry/Nacos/NacosDiscovery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/registry/Nacos/NacosRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-api/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpc-client-test/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-client-test/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-common/target/classes/cn/lzheng/rpc/entity/RpcRequest$RpcRequestBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-common/target/classes/cn/lzheng/rpc/entity/RpcRequest$RpcRequestBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-common/target/classes/cn/lzheng/rpc/entity/RpcRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-common/target/classes/cn/lzheng/rpc/entity/RpcRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-common/target/classes/cn/lzheng/rpc/entity/RpcResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-common/target/classes/cn/lzheng/rpc/entity/RpcResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-client-test/src/test/java/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-client-test/src/test/java/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/entity/RedisInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/entity/RedisInstance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/entity/RpcInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/entity/RpcInstance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/utils/RedisUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-common/src/main/java/cn/lzheng/rpc/utils/RedisUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/registry/Redis/RedisDiscovery.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/registry/Redis/RedisDiscovery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/AbstractRpcServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/AbstractRpcServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/registry/Redis/RedisRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/registry/Redis/RedisRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/registry/ServiceDiscovery.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/registry/ServiceDiscovery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/registry/ServiceRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/registry/ServiceRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/serializer/CommonSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/serializer/CommonSerializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/JDKSocket/client/SocketClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/JDKSocket/client/SocketClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/JDKSocket/server/SocketServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/JDKSocket/server/SocketServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/RpcClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/cn/lzheng/rpc/transport/RpcClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/target/classes/cn/lzheng/rpc/handler/RequestHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/target/classes/cn/lzheng/rpc/handler/RequestHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/target/classes/cn/lzheng/rpc/registry/Redis/RedisDiscovery.class" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/target/classes/cn/lzheng/rpc/registry/Redis/RedisDiscovery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/target/classes/cn/lzheng/rpc/transport/JDKSock/client/SocketClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/target/classes/cn/lzheng/rpc/transport/JDKSock/server/SocketRequestHandlerThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/target/classes/cn/lzheng/rpc/transport/JDKSock/server/SocketServer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/target/classes/cn/lzheng/rpc/transport/RpcClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/target/classes/cn/lzheng/rpc/transport/RpcClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/target/classes/cn/lzheng/rpc/transport/utils/RpcObjectReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/target/classes/cn/lzheng/rpc/transport/utils/RpcObjectReader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/target/test-classes/RegistryTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/target/classes/cn/lzheng/rpc/transport/JDKSocket/client/SocketClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/target/classes/cn/lzheng/rpc/transport/JDKSocket/client/SocketClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/target/classes/cn/lzheng/rpc/transport/JDKSocket/server/SocketServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/target/classes/cn/lzheng/rpc/transport/JDKSocket/server/SocketServer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpc-server-test/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-server-test/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-server-test/src/main/java/cn/lzheng/test/HelloServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-server-test/src/main/java/cn/lzheng/test/HelloServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpc-server-test/src/test/java/RegistryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-server-test/src/test/java/RegistryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,10 +39,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
-        <option value="Interface" />
         <option value="AnnotationType" />
+        <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -104,15 +108,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -129,8 +131,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.RegistryTest" />
         <item itemvalue="Application.test" />
+        <item itemvalue="Application.RegistryTest" />
         <item itemvalue="JUnit.RegistryTest.test" />
       </list>
     </recent_temporary>
@@ -144,7 +146,8 @@
       <option name="presentableId" value="Default" />
       <updated>1619332191384</updated>
       <workItem from="1619332193040" duration="5815000" />
-      <workItem from="1619362790962" duration="58519000" />
+      <workItem from="1619362790962" duration="62210000" />
+      <workItem from="1619935586768" duration="9831000" />
     </task>
     <servers />
   </component>
@@ -161,5 +164,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

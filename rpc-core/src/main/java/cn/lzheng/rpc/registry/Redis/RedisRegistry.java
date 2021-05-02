@@ -12,7 +12,7 @@ import java.net.InetSocketAddress;
  * @Author 6yi
  * @Date 2021/4/26 15:06
  * @Version 1.0
- * @Description:
+ * @Description: redis注册中心
  */
 
 
@@ -29,4 +29,5 @@ public class RedisRegistry implements ServiceRegistry {
             throw new RuntimeException(e);
         }
     }
+
 }

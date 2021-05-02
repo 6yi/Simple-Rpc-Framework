@@ -1,9 +1,12 @@
 package cn.lzheng.rpc.transport.JDKSocket.server;
 
+import cn.lzheng.rpc.enumeration.RegistryCode;
 import cn.lzheng.rpc.factory.ThreadPoolFactory;
 import cn.lzheng.rpc.handler.RequestHandler;
 import cn.lzheng.rpc.provider.ServiceProviderImpl;
 import cn.lzheng.rpc.registry.Redis.RedisRegistry;
+import cn.lzheng.rpc.registry.ServiceDiscovery;
+import cn.lzheng.rpc.registry.ServiceRegistry;
 import cn.lzheng.rpc.serializer.CommonSerializer;
 import cn.lzheng.rpc.transport.AbstractRpcServer;
 import cn.lzheng.rpc.utils.RedisUtil;
@@ -34,18 +37,18 @@ public class SocketServer extends AbstractRpcServer {
     private final ExecutorService threadPool;
 
     public SocketServer(String host,int port) {
-        this(host,port,CommonSerializer.KRYO_SERIALIZER);
+        this(host,port,CommonSerializer.DEFAULT_SERIALIZER, ServiceRegistry.DEFAULT_REGISTRY);
     }
-    public SocketServer(String host,int port,Integer serializer){
+
+    public SocketServer(String host,int port,Integer serializer,Integer registry){
         this.host = host;
         this.port = port;
         threadPool = ThreadPoolFactory.createDefaultThreadPool("socket-rpc-server");
-        this.serviceRegistry = new RedisRegistry();
+        this.serviceRegistry = ServiceRegistry.getByCode(registry);
         this.serviceProvider = new ServiceProviderImpl();
         this.serializer = CommonSerializer.getByCode(serializer);
 
         scanServices();  //扫描服务
-
     }
 
     @Override

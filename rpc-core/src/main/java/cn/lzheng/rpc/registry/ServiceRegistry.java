@@ -1,5 +1,8 @@
 package cn.lzheng.rpc.registry;
 
+import cn.lzheng.rpc.registry.Nacos.NacosRegistry;
+import cn.lzheng.rpc.registry.Redis.RedisRegistry;
+
 import java.net.InetSocketAddress;
 
 /**
@@ -11,11 +14,25 @@ import java.net.InetSocketAddress;
  */
 
 public interface ServiceRegistry {
+    Integer REDIS_REGISTRY = 0;
+    Integer NACOS_REGISTRY = 1;
+    Integer DEFAULT_REGISTRY = NACOS_REGISTRY;
 
     /**
      * @param serviceName 服务名称
      * @param inetSocketAddress 提供服务的地址
      **/
     void registry(String serviceName, InetSocketAddress inetSocketAddress);
+
+    static ServiceRegistry getByCode(int code){
+        switch (code){
+            case 0:
+                return new RedisRegistry();
+            case 1:
+                return new NacosRegistry();
+            default:
+                return null;
+        }
+    }
 
 }

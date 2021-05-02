@@ -27,20 +27,30 @@ public class RedisUtil {
     
     private static String SERVER_ADDR="127.0.0.1";
 
-    private static final Jedis jedis;
+    private static Jedis jedis;
 
-    private static final Set<String> serviceNames = new HashSet<>();
+    private static Set<String> serviceNames;
 
     private static InetSocketAddress address;
 
+    private RedisUtil() {
+    }
 
-    static {
-        jedis=getJedis();
+    private static void init(){
+        if(jedis==null){
+            synchronized (RedisUtil.class){
+                if(jedis==null){
+                    jedis=getJedis();
+                    serviceNames=new HashSet<>();
+                }
+            }
+        }
     }
 
     public static void registerService(String serviceName, InetSocketAddress address){
-        try{
 
+        try{
+            init();
             ObjectMapper objectMapper = new ObjectMapper();
             RedisInstance redisInstance = RedisInstance
                     .builder()
@@ -67,6 +77,7 @@ public class RedisUtil {
      * @Description 获取实例
      **/
     public static List<RedisInstance> getAllInstance(String serviceName){
+        init();
         return jedis.hgetAll(serviceName).values().stream().map(json -> {
             try {
                 return new ObjectMapper().readValue(json, RedisInstance.class);
