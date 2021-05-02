@@ -10,7 +10,7 @@ Simple-RPC-Framework 是一款基于声哥的RPC框架拓展的多注册中心RP
 - 实现自定义的通信协议
 - 服务提供侧自动注册服务
 
-## 传输协议（MRF协议）
+## 传输协议（SRF协议）
 
 调用参数与返回值的传输采用了如下 SRF 协议（ Simple-RPC-Framework 首字母）以防止粘包：
 
