@@ -35,4 +35,6 @@ public interface ServiceRegistry {
         }
     }
 
+    void clearRegistry();
+
 }

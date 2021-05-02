@@ -33,4 +33,9 @@ public class NacosRegistry implements ServiceRegistry {
         }
     }
 
+    @Override
+    public void clearRegistry() {
+        NacosUtil.clearRegistry();
+    }
+
 }

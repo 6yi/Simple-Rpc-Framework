@@ -30,4 +30,9 @@ public class RedisRegistry implements ServiceRegistry {
         }
     }
 
+    @Override
+    public void clearRegistry() {
+        RedisUtil.clearRegistry();
+    }
+
 }

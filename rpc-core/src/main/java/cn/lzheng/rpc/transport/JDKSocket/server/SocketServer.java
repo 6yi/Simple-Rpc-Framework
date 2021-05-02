@@ -57,7 +57,7 @@ public class SocketServer extends AbstractRpcServer {
             serverSocket.bind(new InetSocketAddress(host,port));
             logger.info("rpc服务启动……");
             Runtime.getRuntime().addShutdownHook(new Thread(()->{
-                RedisUtil.clearRegistry();
+                this.serviceRegistry.clearRegistry();
                 ThreadPoolFactory.shutDownAll();
             }));
             Socket socket;

@@ -36,7 +36,7 @@ public class SocketClient implements RpcClient {
 
     private final CommonSerializer serializer;
 
-    private int TIME_OUT = 1500;
+    private static int TIME_OUT = 2500;
 
     public SocketClient(){
         this(DEFAULT_REGISTRY,DEFAULT_SERIALIZER, new RandomLoadBalancer());

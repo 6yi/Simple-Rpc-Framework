@@ -92,6 +92,7 @@ public class RedisUtil {
     public static Jedis getJedis()  {
         try{
             Jedis jedis = new Jedis(SERVER_ADDR);
+            jedis.auth("lzheng");
             jedis.ping();
             return jedis;
         }catch (Exception e){
@@ -108,7 +109,7 @@ public class RedisUtil {
      **/
     public static void clearRegistry(){
         if(!serviceNames.isEmpty() && address != null ){
-            String host = address.getHostName();
+            String host = address.getHostString();
             int port = address.getPort();
             Iterator<String> iterator = serviceNames.iterator();
             while(iterator.hasNext()){
