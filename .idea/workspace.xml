@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97ddf3ac-3680-4be4-b571-8ff4ad4613ac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/rpc-server-test/src/test/java/RegistryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-server-test/src/test/java/RegistryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +124,7 @@
       <updated>1619332191384</updated>
       <workItem from="1619332193040" duration="5815000" />
       <workItem from="1619362790962" duration="62210000" />
-      <workItem from="1619935586768" duration="42049000" />
+      <workItem from="1619935586768" duration="43199000" />
     </task>
     <servers />
   </component>
