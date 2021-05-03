@@ -1,13 +1,8 @@
 import cn.lzheng.rpc.annotation.RpcServiceScans;
-import cn.lzheng.rpc.loadbalancer.RandomLoadBalancer;
-import cn.lzheng.rpc.registry.Redis.RedisDiscovery;
-import cn.lzheng.rpc.registry.Redis.RedisRegistry;
-import cn.lzheng.rpc.serializer.CommonSerializer;
 import cn.lzheng.rpc.transport.JDKSocket.server.SocketServer;
 import org.junit.Test;
-
-import java.net.InetSocketAddress;
 import java.net.UnknownHostException;
+
 
 /**
  * @ClassName RegistryTest

@@ -1,6 +1,10 @@
 # Simple-Rpc-Framework
 
 Simple-RPC-Framework 是一款基于声哥的RPC框架拓展的多注册中心RPC框架 . 网络传输实现了基于 Java 原生 Socket 与 Netty 版本 , 并且实现了多种序列化与负载均衡算法.
+## 架构
+
+![系统架构](./img/rpc.png)
+消费者调用提供者的方式取决于消费者的客户端选择，调用的是动态代理生成的对象，如选用原生 Socket 则该步调用使用 BIO，如选用 Netty 方式则该步调用使用 NIO。如该调用有返回值，则提供者向消费者发送返回值的方式同理。
 
 ## 特性
 
