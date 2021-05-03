@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 
 
 
-@Target(ElementType.TYPE)
+@Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface RpcReference {
 

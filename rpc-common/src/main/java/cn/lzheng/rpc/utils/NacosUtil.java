@@ -29,7 +29,7 @@ public class NacosUtil {
     private static NamingService namingService;
     private static Set<String> serviceNames;
     private static InetSocketAddress address;
-    private static String SERVER_ADDR = "192.168.123.17:8848";
+    private static String SERVER_ADDR = "127.0.0.1:8848";
 
 
 

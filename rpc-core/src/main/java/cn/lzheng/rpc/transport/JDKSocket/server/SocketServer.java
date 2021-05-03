@@ -1,15 +1,12 @@
 package cn.lzheng.rpc.transport.JDKSocket.server;
 
-import cn.lzheng.rpc.enumeration.RegistryCode;
+
 import cn.lzheng.rpc.factory.ThreadPoolFactory;
 import cn.lzheng.rpc.handler.RequestHandler;
 import cn.lzheng.rpc.provider.ServiceProviderImpl;
-import cn.lzheng.rpc.registry.Redis.RedisRegistry;
-import cn.lzheng.rpc.registry.ServiceDiscovery;
 import cn.lzheng.rpc.registry.ServiceRegistry;
 import cn.lzheng.rpc.serializer.CommonSerializer;
 import cn.lzheng.rpc.transport.AbstractRpcServer;
-import cn.lzheng.rpc.utils.RedisUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

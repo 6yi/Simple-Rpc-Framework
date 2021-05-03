@@ -13,6 +13,9 @@
         <module name="rpc-server-test" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="8" />
+    <bytecodeTargetLevel target="8">
+      <module name="rpc-spring" target="1.8" />
+      <module name="rpc-springBoot-starter" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

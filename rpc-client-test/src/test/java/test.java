@@ -1,8 +1,10 @@
+import cn.lzheng.rpc.annotation.EnableSimpleRpc;
 import cn.lzheng.rpc.api.HelloObject;
-import cn.lzheng.rpc.api.HelloService;
-import cn.lzheng.rpc.serializer.CommonSerializer;
-import cn.lzheng.rpc.transport.JDKSocket.client.SocketClient;
-import cn.lzheng.rpc.transport.RpcClientProxy;
+import cn.lzheng.rpc.test.H;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 /**
  * @ClassName test
@@ -11,14 +13,19 @@ import cn.lzheng.rpc.transport.RpcClientProxy;
  * @Version 1.0
  * @Description:
  */
-
-
+@Configuration
+@ComponentScan("cn.lzheng.rpc.test")
+@EnableSimpleRpc
 public class test {
     public static void main(String[] args) {
-        SocketClient socketClient = new SocketClient();
-        RpcClientProxy rpcClientProxy = new RpcClientProxy(socketClient);
-        HelloService proxy = rpcClientProxy.getProxy(HelloService.class);
-        HelloObject helloObject = new HelloObject(12, "??");
-        System.out.println(proxy.hello(helloObject));
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(test.class);
+        H bean = applicationContext.getBean(H.class);
+        bean.getHelloService().hello(new HelloObject());
+
+//        SocketClient socketClient = new SocketClient();
+//        RpcClientProxy rpcClientProxy = new RpcClientProxy(socketClient);
+//        HelloService proxy = rpcClientProxy.getProxy(HelloService.class);
+//        HelloObject helloObject = new HelloObject(12, "??");
+//        System.out.println(proxy.hello(helloObject));
     }
 }

@@ -13,6 +13,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.2.10.RELEASE</version>
+        </dependency>
+        <dependency>
             <groupId>cn.lzheng</groupId>
             <artifactId>rpc-common</artifactId>
             <version>${project.version}</version>
