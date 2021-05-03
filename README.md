@@ -109,4 +109,5 @@ public class test {
 
 ```
 @EnableSimpleRpc开启Rpc服务
+
 注入RpcClient,可以用Netty或者Socket的实现类
