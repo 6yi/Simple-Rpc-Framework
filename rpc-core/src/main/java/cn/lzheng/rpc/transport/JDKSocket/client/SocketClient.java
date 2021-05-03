@@ -38,19 +38,24 @@ public class SocketClient implements RpcClient {
     private static int TIME_OUT = 2500;
 
     public SocketClient(){
-        this(DEFAULT_REGISTRY,DEFAULT_SERIALIZER, new RandomLoadBalancer());
+        this(null,DEFAULT_REGISTRY,DEFAULT_SERIALIZER, new RandomLoadBalancer());
+    }
+
+    public SocketClient(String URI,Integer discovery){
+        this(URI,discovery,DEFAULT_SERIALIZER, new RandomLoadBalancer());
     }
 
     public SocketClient(LoadBalancer loadBalancer) {
-        this(DEFAULT_REGISTRY,DEFAULT_SERIALIZER, loadBalancer);
+        this(null,DEFAULT_REGISTRY,DEFAULT_SERIALIZER, loadBalancer);
     }
 
-    public SocketClient(Integer discovery,Integer serializer) {
-        this(discovery,serializer, new RandomLoadBalancer());
+
+    public SocketClient(String URI,Integer discovery,Integer serializer) {
+        this(URI,discovery,serializer, new RandomLoadBalancer());
     }
 
-    public SocketClient(Integer discovery,Integer serializer, LoadBalancer loadBalancer) {
-        this.serviceDiscovery = ServiceDiscovery.getByCode(discovery,loadBalancer);
+    public SocketClient(String URI,Integer discovery,Integer serializer, LoadBalancer loadBalancer) {
+        this.serviceDiscovery = ServiceDiscovery.getByCode(URI,discovery,loadBalancer);
         this.serializer = CommonSerializer.getByCode(serializer);
     }
 

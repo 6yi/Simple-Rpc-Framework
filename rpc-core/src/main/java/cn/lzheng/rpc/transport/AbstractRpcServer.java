@@ -25,7 +25,7 @@ public abstract class AbstractRpcServer implements RpcServer{
     protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
     protected String host;
-    protected int port;
+    protected Integer port;
 
     protected ServiceRegistry serviceRegistry;
     protected ServiceProvider serviceProvider;

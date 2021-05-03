@@ -5,6 +5,7 @@ Simple-RPC-Framework 是一款基于声哥的RPC框架拓展的多注册中心RP
 ## 特性
 
 - 目前拥有redis和nacos两种注册中心方案.
+- 支持Spring自动注册和发现服务  
 - 实现了2种序列化方案,Json,Kryo.
 - 接口抽象良好，模块耦合度低，网络传输、序列化器、负载均衡算法可配置
 - 实现自定义的通信协议
@@ -76,3 +77,36 @@ public class test {
     }
 }
 ```
+
+## Spring支持
+
+### @RpcReference注解标注为Rpc服务接口
+```java
+@Service
+public class testService {
+    @RpcReference
+    HelloService helloService;
+}
+```
+
+### 客户端调用
+```java
+@ComponentScan("cn.lzheng.rpc.test")
+@Configuration
+@EnableSimpleRpc
+public class test {
+    @Bean
+    public RpcClient socketClient(){
+        return new SocketClient("192.168.123.17:8848", RegistryCode.NACOS.getCode());
+    }
+    public static void main(String[] args) {
+        ApplicationContext applicationContext =
+                new AnnotationConfigApplicationContext(test.class);
+        testService bean = applicationContext.getBean(testService.class);
+        bean.getHelloService().hello(new HelloObject(1,"hello"));
+    }
+}
+
+```
+@EnableSimpleRpc开启Rpc服务
+注入RpcClient,可以用Netty或者Socket的实现类

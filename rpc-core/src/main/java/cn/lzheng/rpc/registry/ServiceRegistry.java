@@ -2,6 +2,8 @@ package cn.lzheng.rpc.registry;
 
 import cn.lzheng.rpc.registry.Nacos.NacosRegistry;
 import cn.lzheng.rpc.registry.Redis.RedisRegistry;
+import cn.lzheng.rpc.utils.NacosUtil;
+import cn.lzheng.rpc.utils.RedisUtil;
 
 import java.net.InetSocketAddress;
 
@@ -24,11 +26,13 @@ public interface ServiceRegistry {
      **/
     void registry(String serviceName, InetSocketAddress inetSocketAddress);
 
-    static ServiceRegistry getByCode(int code){
+    static ServiceRegistry getByCode(String URI,int code){
         switch (code){
             case 0:
+                if(URI!=null) RedisUtil.setServerAddr(URI);
                 return new RedisRegistry();
             case 1:
+                if(URI!=null) NacosUtil.setServerAddr(URI);
                 return new NacosRegistry();
             default:
                 return null;

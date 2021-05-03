@@ -1,6 +1,8 @@
 package cn.lzheng.rpc.transport.JDKSocket.server;
 
 
+import cn.lzheng.rpc.enumeration.RpcError;
+import cn.lzheng.rpc.exception.RpcException;
 import cn.lzheng.rpc.factory.ThreadPoolFactory;
 import cn.lzheng.rpc.handler.RequestHandler;
 import cn.lzheng.rpc.provider.ServiceProviderImpl;
@@ -11,9 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.net.InetSocketAddress;
-import java.net.ServerSocket;
-import java.net.Socket;
+import java.net.*;
 import java.util.concurrent.*;
 
 /**
@@ -29,22 +29,38 @@ public class SocketServer extends AbstractRpcServer {
 
 
     private static final Logger logger = LoggerFactory.getLogger(SocketServer.class);
-    private final CommonSerializer serializer;
+    private CommonSerializer serializer;
     private final RequestHandler requestHandler = new RequestHandler();
-    private final ExecutorService threadPool;
+    private ExecutorService threadPool;
 
-    public SocketServer(String host,int port) {
-        this(host,port,CommonSerializer.DEFAULT_SERIALIZER, ServiceRegistry.DEFAULT_REGISTRY);
+    public SocketServer(String host,String URI){
+        this(host,null,CommonSerializer.DEFAULT_SERIALIZER, ServiceRegistry.DEFAULT_REGISTRY,URI);
     }
 
-    public SocketServer(String host,int port,Integer serializer,Integer registry){
+    public SocketServer(String host,Integer port,String URI) {
+        this(host,port,CommonSerializer.DEFAULT_SERIALIZER, ServiceRegistry.DEFAULT_REGISTRY,URI);
+    }
+
+
+    public SocketServer(String host,Integer port,Integer serializer,Integer registry,String URI){
         this.host = host;
-        this.port = port;
+        if (port==null){
+            try {
+                ServerSocket serverSocket = new ServerSocket(0);
+                this.port=serverSocket.getLocalPort();
+                serverSocket.close();
+                logger.info("随机端口号:{}",this.port);
+            } catch (Exception e) {
+                logger.error("无空闲端口号");
+                throw new RpcException(RpcError.UNKNOWN_ERROR);
+            }
+        }else{
+            this.port=port;
+        }
         threadPool = ThreadPoolFactory.createDefaultThreadPool("socket-rpc-server");
-        this.serviceRegistry = ServiceRegistry.getByCode(registry);
+        this.serviceRegistry = ServiceRegistry.getByCode(URI,registry);
         this.serviceProvider = new ServiceProviderImpl();
         this.serializer = CommonSerializer.getByCode(serializer);
-
         scanServices();  //扫描服务
     }
 

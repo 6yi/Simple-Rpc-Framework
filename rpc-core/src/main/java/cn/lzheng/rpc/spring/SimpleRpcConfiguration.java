@@ -1,10 +1,13 @@
 package cn.lzheng.rpc.spring;
 
 import cn.lzheng.rpc.transport.JDKSocket.client.SocketClient;
+import cn.lzheng.rpc.transport.RpcClient;
 import cn.lzheng.rpc.transport.RpcClientProxy;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.Resource;
 
 /**
  * @ClassName SimpleRpcConfiguration
@@ -15,22 +18,19 @@ import org.springframework.context.annotation.Configuration;
  */
 
 @Configuration
+@Component
 public class SimpleRpcConfiguration {
 
-
-    public RpcClientProxy socketClient(){
-        SocketClient client=null;
-        client=startClient(1,0);
-        return new RpcClientProxy(client);
-    }
+    @Resource
+    RpcClient rpcClient;
 
     @Bean
     public SpringBeanPostProcessor springBeanPostProcessor(){
-        return new SpringBeanPostProcessor(socketClient());
+        return new SpringBeanPostProcessor(rpcClientProxy());
     }
 
-    public SocketClient startClient(int register,int serializer){
-        return new SocketClient(register,serializer);
+    public RpcClientProxy rpcClientProxy(){
+        return new RpcClientProxy(rpcClient);
     }
 
 }

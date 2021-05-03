@@ -13,7 +13,8 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
-public class H {
+public class testService {
+
     @RpcReference
     HelloService helloService;
 

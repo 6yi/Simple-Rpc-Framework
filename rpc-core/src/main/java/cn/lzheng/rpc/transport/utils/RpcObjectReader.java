@@ -21,6 +21,7 @@ import java.io.InputStream;
 
 
 public class RpcObjectReader {
+
     private static final Logger logger = LoggerFactory.getLogger(RpcObjectReader.class);
     private static final int MAGIC_NUMBER = 0xCAFEBABE;
 

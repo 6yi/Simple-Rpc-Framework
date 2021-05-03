@@ -5,6 +5,8 @@ import cn.lzheng.rpc.registry.Nacos.NacosDiscovery;
 import cn.lzheng.rpc.registry.Nacos.NacosRegistry;
 import cn.lzheng.rpc.registry.Redis.RedisDiscovery;
 import cn.lzheng.rpc.registry.Redis.RedisRegistry;
+import cn.lzheng.rpc.utils.NacosUtil;
+import cn.lzheng.rpc.utils.RedisUtil;
 
 import java.net.InetSocketAddress;
 
@@ -30,11 +32,15 @@ public interface ServiceDiscovery {
      */
     InetSocketAddress lookupService(String serviceName);
 
-    static ServiceDiscovery getByCode(int code, LoadBalancer loadBalancer){
+    static ServiceDiscovery getByCode(String URI,int code, LoadBalancer loadBalancer){
         switch (code){
             case 0:
+                if(URI!=null)
+                RedisUtil.setServerAddr(URI);
                 return new RedisDiscovery(loadBalancer);
             case 1:
+                if(URI!=null)
+                NacosUtil.setServerAddr(URI);
                 return new NacosDiscovery(loadBalancer);
             default:
                 return null;

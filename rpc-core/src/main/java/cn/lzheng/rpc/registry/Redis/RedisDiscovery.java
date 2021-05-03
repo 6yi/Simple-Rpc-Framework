@@ -31,6 +31,8 @@ public class RedisDiscovery implements ServiceDiscovery {
         else this.loadBalancer = loadBalancer;
     }
 
+
+
     @Override
     public InetSocketAddress lookupService(String serviceName) {
         try{

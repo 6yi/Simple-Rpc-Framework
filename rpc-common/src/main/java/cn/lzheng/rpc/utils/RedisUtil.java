@@ -36,6 +36,14 @@ public class RedisUtil {
     private RedisUtil() {
     }
 
+    public static String getServerAddr() {
+        return SERVER_ADDR;
+    }
+
+    public static void setServerAddr(String serverAddr) {
+        SERVER_ADDR = serverAddr;
+    }
+
     private static void init(){
         if(jedis==null){
             synchronized (RedisUtil.class){
@@ -91,8 +99,9 @@ public class RedisUtil {
 
     public static Jedis getJedis()  {
         try{
-            Jedis jedis = new Jedis(SERVER_ADDR);
-            jedis.auth("lzheng");
+            String[] uriAndAuth = SERVER_ADDR.split("&");
+            Jedis jedis = new Jedis(uriAndAuth[0]);
+            jedis.auth(uriAndAuth[1]);
             jedis.ping();
             return jedis;
         }catch (Exception e){

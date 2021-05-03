@@ -25,13 +25,20 @@ import java.util.Set;
 
 
 public class NacosUtil {
+
     private static final Logger logger = LoggerFactory.getLogger(NacosUtil.class);
     private static NamingService namingService;
     private static Set<String> serviceNames;
     private static InetSocketAddress address;
     private static String SERVER_ADDR = "127.0.0.1:8848";
 
+    public static String getServerAddr() {
+        return SERVER_ADDR;
+    }
 
+    public static void setServerAddr(String serverAddr) {
+        SERVER_ADDR = serverAddr;
+    }
 
     private NacosUtil() {
     }

@@ -1,10 +1,18 @@
 import cn.lzheng.rpc.annotation.EnableSimpleRpc;
+import cn.lzheng.rpc.annotation.RpcReference;
 import cn.lzheng.rpc.api.HelloObject;
-import cn.lzheng.rpc.test.H;
+import cn.lzheng.rpc.api.HelloService;
+import cn.lzheng.rpc.enumeration.RegistryCode;
+import cn.lzheng.rpc.enumeration.SerializerCode;
+import cn.lzheng.rpc.test.testService;
+import cn.lzheng.rpc.transport.JDKSocket.client.SocketClient;
+import cn.lzheng.rpc.transport.RpcClient;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 /**
  * @ClassName test
@@ -13,19 +21,18 @@ import org.springframework.context.annotation.Configuration;
  * @Version 1.0
  * @Description:
  */
-@Configuration
 @ComponentScan("cn.lzheng.rpc.test")
+@Configuration
 @EnableSimpleRpc
 public class test {
+    @Bean
+    public RpcClient socketClient(){
+        return new SocketClient("192.168.123.17:8848", RegistryCode.NACOS.getCode());
+    }
     public static void main(String[] args) {
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(test.class);
-        H bean = applicationContext.getBean(H.class);
-        bean.getHelloService().hello(new HelloObject());
-
-//        SocketClient socketClient = new SocketClient();
-//        RpcClientProxy rpcClientProxy = new RpcClientProxy(socketClient);
-//        HelloService proxy = rpcClientProxy.getProxy(HelloService.class);
-//        HelloObject helloObject = new HelloObject(12, "??");
-//        System.out.println(proxy.hello(helloObject));
+        ApplicationContext applicationContext =
+                new AnnotationConfigApplicationContext(test.class);
+        testService bean = applicationContext.getBean(testService.class);
+        bean.getHelloService().hello(new HelloObject(1,"hello"));
     }
 }
