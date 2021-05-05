@@ -4,10 +4,13 @@ package cn.lzheng.rpc.transport.Netty.server;
 import cn.lzheng.rpc.enumeration.RpcError;
 import cn.lzheng.rpc.exception.RpcException;
 import cn.lzheng.rpc.factory.ThreadPoolFactory;
+import cn.lzheng.rpc.handler.RequestHandler;
+import cn.lzheng.rpc.provider.ServiceProviderImpl;
 import cn.lzheng.rpc.registry.ServiceRegistry;
 import cn.lzheng.rpc.serializer.CommonSerializer;
 import cn.lzheng.rpc.transport.AbstractRpcServer;
 import cn.lzheng.rpc.transport.Netty.codec.CommonDecoder;
+import cn.lzheng.rpc.transport.Netty.codec.CommonEncoder;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -35,6 +38,7 @@ public class NettyServer extends AbstractRpcServer {
 
     private static final Logger logger = LoggerFactory.getLogger(NettyServer.class);
 
+    private final RequestHandler requestHandler = new RequestHandler();
 
     public NettyServer(String host,String URI){
         this(host,null,CommonSerializer.DEFAULT_SERIALIZER,ServiceRegistry.DEFAULT_REGISTRY,URI);
@@ -61,6 +65,7 @@ public class NettyServer extends AbstractRpcServer {
         }
         this.serviceRegistry = ServiceRegistry.getByCode(URI,registry);
         this.serializer = CommonSerializer.getByCode(serializer);
+        this.serviceProvider=new ServiceProviderImpl();
         scanServices();
     }
 
@@ -89,7 +94,8 @@ public class NettyServer extends AbstractRpcServer {
                             ChannelPipeline pipeline = socketChannel.pipeline();
                             pipeline.addLast(new IdleStateHandler(30,0,0, TimeUnit.SECONDS))
                                     .addLast(new CommonDecoder())
-                                    .addLast();
+                                    .addLast(new CommonEncoder(serializer))
+                                    .addLast(new NettyRequestHandler(requestHandler));
                         }
                     });
             ChannelFuture future = serverBootstrap.bind(host, port).sync();

@@ -25,4 +25,7 @@ public class testService {
         helloService.hello(new HelloObject());
     }
 
+    public HelloService getHelloService() {
+        return helloService;
+    }
 }

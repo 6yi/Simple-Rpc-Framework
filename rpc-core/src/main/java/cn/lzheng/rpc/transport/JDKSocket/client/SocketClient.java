@@ -37,7 +37,6 @@ public class SocketClient implements RpcClient {
 
     private final CommonSerializer serializer;
 
-    private static int TIME_OUT = 2500;
 
     public SocketClient(){
         this(null,DEFAULT_REGISTRY,DEFAULT_SERIALIZER, new RandomLoadBalancer());
@@ -69,7 +68,7 @@ public class SocketClient implements RpcClient {
         }
         InetSocketAddress inetSocketAddress = serviceDiscovery.lookupService(rpcRequest.getInterfaceName());
         try(Socket socket = new Socket()){
-            socket.connect(inetSocketAddress,TIME_OUT);
+            socket.connect(inetSocketAddress);
             OutputStream outputStream = socket.getOutputStream();
             InputStream inputStream = socket.getInputStream();
             RpcObjectWriter.writeObject(outputStream,rpcRequest,serializer);

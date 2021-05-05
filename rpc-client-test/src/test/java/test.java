@@ -29,10 +29,13 @@ public class test {
     public RpcClient socketClient(){
         return new SocketClient("192.168.123.17:8848", RegistryCode.NACOS.getCode());
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         ApplicationContext applicationContext =
                 new AnnotationConfigApplicationContext(test.class);
         testService bean = applicationContext.getBean(testService.class);
-        bean.getHelloService().hello(new HelloObject(1,"hello"));
+        for(int i=0;i<10;i++){
+            bean.getHelloService().hello(new HelloObject(1,"hello"));
+        }
+
     }
 }
