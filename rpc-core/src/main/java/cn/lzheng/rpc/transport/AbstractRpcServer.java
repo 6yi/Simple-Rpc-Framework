@@ -6,6 +6,7 @@ import cn.lzheng.rpc.enumeration.RpcError;
 import cn.lzheng.rpc.exception.RpcException;
 import cn.lzheng.rpc.provider.ServiceProvider;
 import cn.lzheng.rpc.registry.ServiceRegistry;
+import cn.lzheng.rpc.serializer.CommonSerializer;
 import cn.lzheng.rpc.utils.ReflectUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,7 +30,7 @@ public abstract class AbstractRpcServer implements RpcServer{
 
     protected ServiceRegistry serviceRegistry;
     protected ServiceProvider serviceProvider;
-
+    protected CommonSerializer serializer;
     /**
      * @author 6yi
      * @date 2021/4/28

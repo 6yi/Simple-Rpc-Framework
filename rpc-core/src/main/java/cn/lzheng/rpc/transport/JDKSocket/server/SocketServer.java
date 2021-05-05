@@ -11,7 +11,6 @@ import cn.lzheng.rpc.serializer.CommonSerializer;
 import cn.lzheng.rpc.transport.AbstractRpcServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.io.IOException;
 import java.net.*;
 import java.util.concurrent.*;
@@ -29,7 +28,6 @@ public class SocketServer extends AbstractRpcServer {
 
 
     private static final Logger logger = LoggerFactory.getLogger(SocketServer.class);
-    private CommonSerializer serializer;
     private final RequestHandler requestHandler = new RequestHandler();
     private ExecutorService threadPool;
 
@@ -83,4 +81,5 @@ public class SocketServer extends AbstractRpcServer {
             logger.error("服务器启动时有错误发生:", e);
         }
     }
+
 }
