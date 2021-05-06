@@ -4,7 +4,7 @@ package cn.lzheng.rpc.transport.Netty.server;
 import cn.lzheng.rpc.enumeration.RpcError;
 import cn.lzheng.rpc.exception.RpcException;
 import cn.lzheng.rpc.factory.ThreadPoolFactory;
-import cn.lzheng.rpc.handler.RequestHandler;
+import cn.lzheng.rpc.handler.InvokeMethodHandler;
 import cn.lzheng.rpc.provider.ServiceProviderImpl;
 import cn.lzheng.rpc.registry.ServiceRegistry;
 import cn.lzheng.rpc.serializer.CommonSerializer;
@@ -38,7 +38,7 @@ public class NettyServer extends AbstractRpcServer {
 
     private static final Logger logger = LoggerFactory.getLogger(NettyServer.class);
 
-    private final RequestHandler requestHandler = new RequestHandler();
+    private final InvokeMethodHandler requestHandler = new InvokeMethodHandler();
 
     public NettyServer(String host,String URI){
         this(host,null,CommonSerializer.DEFAULT_SERIALIZER,ServiceRegistry.DEFAULT_REGISTRY,URI);
@@ -78,9 +78,7 @@ public class NettyServer extends AbstractRpcServer {
         }));
         EventLoopGroup bossGroup = new NioEventLoopGroup();
         EventLoopGroup workGroup = new NioEventLoopGroup();
-
         try{
-
             ServerBootstrap serverBootstrap = new ServerBootstrap();
             serverBootstrap.group(bossGroup, workGroup)
                     .channel(NioServerSocketChannel.class)

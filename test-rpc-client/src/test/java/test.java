@@ -6,7 +6,9 @@ import cn.lzheng.rpc.enumeration.RegistryCode;
 import cn.lzheng.rpc.enumeration.SerializerCode;
 import cn.lzheng.rpc.test.testService;
 import cn.lzheng.rpc.transport.JDKSocket.client.SocketClient;
+import cn.lzheng.rpc.transport.Netty.client.NettyClient;
 import cn.lzheng.rpc.transport.RpcClient;
+import cn.lzheng.rpc.transport.RpcClientProxy;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -27,7 +29,7 @@ import org.springframework.stereotype.Component;
 public class test {
     @Bean
     public RpcClient socketClient(){
-        return new SocketClient("192.168.123.17:8848", RegistryCode.NACOS.getCode());
+        return new NettyClient("127.0.0.1:8848", RegistryCode.NACOS.getCode());
     }
     public static void main(String[] args) throws InterruptedException {
         ApplicationContext applicationContext =

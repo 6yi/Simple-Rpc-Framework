@@ -17,6 +17,7 @@ import io.netty.handler.codec.MessageToByteEncoder;
 
 
 public class CommonEncoder extends MessageToByteEncoder {
+
     private static final int MAGIC_NUMBER = 0xCAFEBABE;
 
     private final CommonSerializer serializer;
@@ -38,4 +39,5 @@ public class CommonEncoder extends MessageToByteEncoder {
         out.writeInt(bytes.length);
         out.writeBytes(bytes);
     }
+
 }

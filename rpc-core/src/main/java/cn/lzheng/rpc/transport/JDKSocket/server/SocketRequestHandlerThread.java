@@ -2,7 +2,7 @@ package cn.lzheng.rpc.transport.JDKSocket.server;
 
 import cn.lzheng.rpc.entity.RpcRequest;
 import cn.lzheng.rpc.entity.RpcResponse;
-import cn.lzheng.rpc.handler.RequestHandler;
+import cn.lzheng.rpc.handler.InvokeMethodHandler;
 import cn.lzheng.rpc.serializer.CommonSerializer;
 import cn.lzheng.rpc.transport.JDKSocket.utils.RpcObjectReader;
 import cn.lzheng.rpc.transport.JDKSocket.utils.RpcObjectWriter;
@@ -27,10 +27,10 @@ public class SocketRequestHandlerThread implements Runnable{
 
     private static final Logger logger = LoggerFactory.getLogger(SocketRequestHandlerThread.class);
     private Socket socket;
-    private RequestHandler requestHandler;
+    private InvokeMethodHandler requestHandler;
     private CommonSerializer serializer;
 
-    public SocketRequestHandlerThread(Socket socket, RequestHandler requestHandler, CommonSerializer serializer) {
+    public SocketRequestHandlerThread(Socket socket, InvokeMethodHandler requestHandler, CommonSerializer serializer) {
         this.socket = socket;
         this.requestHandler = requestHandler;
         this.serializer = serializer;

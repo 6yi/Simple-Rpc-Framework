@@ -28,7 +28,6 @@ public class CommonDecoder extends ReplayingDecoder {
     private static final Logger logger = LoggerFactory.getLogger(CommonDecoder.class);
     private static final int MAGIC_NUMBER = 0xCAFEBABE;
 
-
     @Override
     protected void decode(ChannelHandlerContext channelHandlerContext, ByteBuf byteBuf, List<Object> list) throws Exception {
         int magic = byteBuf.readInt();
@@ -58,4 +57,5 @@ public class CommonDecoder extends ReplayingDecoder {
         Object object = serializer.deserialize(data,packageClass);
         list.add(object);
     }
+
 }

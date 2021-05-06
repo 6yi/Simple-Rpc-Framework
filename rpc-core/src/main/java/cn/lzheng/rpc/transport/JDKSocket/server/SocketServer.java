@@ -4,7 +4,7 @@ package cn.lzheng.rpc.transport.JDKSocket.server;
 import cn.lzheng.rpc.enumeration.RpcError;
 import cn.lzheng.rpc.exception.RpcException;
 import cn.lzheng.rpc.factory.ThreadPoolFactory;
-import cn.lzheng.rpc.handler.RequestHandler;
+import cn.lzheng.rpc.handler.InvokeMethodHandler;
 import cn.lzheng.rpc.provider.ServiceProviderImpl;
 import cn.lzheng.rpc.registry.ServiceRegistry;
 import cn.lzheng.rpc.serializer.CommonSerializer;
@@ -28,7 +28,7 @@ public class SocketServer extends AbstractRpcServer {
 
 
     private static final Logger logger = LoggerFactory.getLogger(SocketServer.class);
-    private final RequestHandler requestHandler = new RequestHandler();
+    private final InvokeMethodHandler requestHandler = new InvokeMethodHandler();
     private ExecutorService threadPool;
 
     public SocketServer(String host,String URI){

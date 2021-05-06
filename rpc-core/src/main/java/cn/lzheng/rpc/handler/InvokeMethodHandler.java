@@ -11,7 +11,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
- * @ClassName RequestHandler
+ * @ClassName InvokeMethodHandler
  * @Author 6yi
  * @Date 2021/4/26 14:58
  * @Version 1.0
@@ -19,9 +19,9 @@ import java.lang.reflect.Method;
  */
 
 
-public class RequestHandler {
+public class InvokeMethodHandler {
 
-    private static final Logger logger = LoggerFactory.getLogger(RequestHandler.class);
+    private static final Logger logger = LoggerFactory.getLogger(InvokeMethodHandler.class);
     private static final ServiceProvider serviceProvider;
 
     static {
@@ -29,7 +29,7 @@ public class RequestHandler {
     }
 
     public Object handle(RpcRequest rpcRequest){
-        Object service = RequestHandler.serviceProvider.getServiceProvider(rpcRequest.getInterfaceName());
+        Object service = InvokeMethodHandler.serviceProvider.getServiceProvider(rpcRequest.getInterfaceName());
         return invokeTargetMethod(rpcRequest,service);
     }
 

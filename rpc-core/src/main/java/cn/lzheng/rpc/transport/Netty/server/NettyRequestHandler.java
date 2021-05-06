@@ -2,7 +2,7 @@ package cn.lzheng.rpc.transport.Netty.server;
 
 import cn.lzheng.rpc.entity.RpcRequest;
 import cn.lzheng.rpc.entity.RpcResponse;
-import cn.lzheng.rpc.handler.RequestHandler;
+import cn.lzheng.rpc.handler.InvokeMethodHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.handler.timeout.IdleState;
@@ -23,9 +23,9 @@ import org.slf4j.LoggerFactory;
 public class NettyRequestHandler extends SimpleChannelInboundHandler<RpcRequest> {
     private static final Logger logger = LoggerFactory.getLogger(NettyRequestHandler.class);
 
-    private static RequestHandler requestHandler;
+    private static InvokeMethodHandler requestHandler;
 
-    public NettyRequestHandler(RequestHandler requestHandler) {
+    public NettyRequestHandler(InvokeMethodHandler requestHandler) {
         this.requestHandler = requestHandler;
     }
 

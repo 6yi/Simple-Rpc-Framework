@@ -18,7 +18,10 @@ import java.net.UnknownHostException;
 public class RegistryTest {
 
     public static void main(String[] args) {
-        NettyServer nettyServer = new NettyServer("192.168.123.17", RegistryCode.NACOS.getCode(), "192.168.123.17:8848");
+        NettyServer nettyServer = new NettyServer("127.0.0.1",
+                RegistryCode.NACOS.getCode(),
+                "127.0.0.1:8848");
+
         nettyServer.start();
 //        SocketServer socketServer = new SocketServer("192.168.123.17","192.168.123.17:8848");
 //        socketServer.start();
