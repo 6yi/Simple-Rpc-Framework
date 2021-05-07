@@ -1,6 +1,8 @@
 package cn.lzheng.rpc.utils;
 
 import cn.lzheng.rpc.entity.RedisInstance;
+import cn.lzheng.rpc.enumeration.RpcError;
+import cn.lzheng.rpc.exception.RpcException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
@@ -100,7 +102,9 @@ public class RedisUtil {
     public static Jedis getJedis()  {
         try{
             String[] uriAndAuth = SERVER_ADDR.split("&");
-            Jedis jedis = new Jedis(uriAndAuth[0]);
+            String[] hostAndPort = uriAndAuth[0].split(":");
+            if(hostAndPort.length<2) throw new RpcException(RpcError.FAILED_TO_CONNECT_TO_SERVICE_REGISTRY);
+            Jedis jedis = new Jedis(hostAndPort[0],Integer.parseInt(hostAndPort[1]));
             jedis.auth(uriAndAuth[1]);
             jedis.ping();
             return jedis;
