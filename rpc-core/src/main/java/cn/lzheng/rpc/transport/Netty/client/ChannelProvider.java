@@ -69,7 +69,7 @@ public class ChannelProvider {
         try{
             channel = connect(bootstrap,inetSocketAddress);
         }catch (ExecutionException | InterruptedException e){
-            logger.error("调用失败"+e);
+            logger.error("调用失败,无法连接目标:"+e);
             return null;
         }
         channelMap.put(key, channel);

@@ -78,7 +78,7 @@ public class NettyClient implements RpcClient {
         try{
             InetSocketAddress inetSocketAddress = serviceDiscovery.lookupService(rpcRequest.getInterfaceName());
             Channel channel = ChannelProvider.get(inetSocketAddress,serializer);
-            if(!channel.isActive()){
+            if(channel==null||!channel.isActive()){
 //                workGroup.shutdownGracefully();
                 return null;
             }

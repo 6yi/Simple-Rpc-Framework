@@ -25,7 +25,6 @@ public class CacheRequest {
     private CacheRequest() {
     }
 
-
     public static CacheRequest getCacheRequest() {
         if(cacheRequest==null){
             synchronized (CacheRequest.class){
