@@ -17,6 +17,14 @@ Simple-RPC-Framework是一款多注册中心RPC框架 . 网络传输实现了基
 - 服务提供侧自动注册服务
 - 如果客户端和服务端均使用Netty通信，则会开启心跳监测机制保持连接，复用Channel
 
+## 模块说明
+
+- rpc-common 通用实体对象，工具类
+- rpc-core rpc核心实现
+- rpc-api 通用接口，测试用
+- test-client 消费端测试
+- test-server 服务端测试
+
 ## 传输协议（SRF协议）
 
 调用参数与返回值的传输采用了如下 SRF 协议（ Simple-RPC-Framework 首字母）以防止粘包：
