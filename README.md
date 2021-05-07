@@ -1,6 +1,7 @@
 # Simple-Rpc-Framework
 
-Simple-RPC-Framework 是一款基于声哥的RPC框架拓展的多注册中心RPC框架 . 网络传输实现了基于 Java 原生 Socket 与 Netty 版本 , 并且实现了多种序列化与负载均衡算法.
+Simple-RPC-Framework是一款多注册中心RPC框架 . 网络传输实现了基于 Java 原生 Socket 与 Netty 版本 , 并且实现了多种序列化与负载均衡算法.
+
 ## 架构
 
 ![系统架构](./img/rpc.png)
@@ -10,10 +11,11 @@ Simple-RPC-Framework 是一款基于声哥的RPC框架拓展的多注册中心RP
 
 - 目前拥有redis和nacos两种注册中心方案.
 - 支持Spring自动注册和发现服务  
-- 实现了2种序列化方案,Json,Kryo.
+- 实现了多种序列化方案,Json,Kryo,Hessian
 - 接口抽象良好，模块耦合度低，网络传输、序列化器、负载均衡算法可配置
 - 实现自定义的通信协议
 - 服务提供侧自动注册服务
+- 如果客户端和服务端均使用Netty通信，则会开启心跳监测机制保持连接，复用Channel
 
 ## 传输协议（SRF协议）
 
@@ -62,8 +64,15 @@ public class HelloServiceImpl implements HelloService {
 @RpcServiceScans("cn.lzheng.test")
 public class RegistryTest {
     public static void main(String[] args) {
+        //socket
         SocketServer socketServer = new SocketServer("127.0.0.1", 6080);
         socketServer.start();
+        
+        //Netty
+        NettyServer nettyServer = new NettyServer("127.0.0.1",
+                RegistryCode.NACOS.getCode(),
+                "127.0.0.1:8848");
+        nettyServer.start();
     }
 }
 ```
@@ -99,10 +108,17 @@ public class testService {
 @Configuration
 @EnableSimpleRpc
 public class test {
+    //socket
     @Bean
     public RpcClient socketClient(){
         return new SocketClient("192.168.123.17:8848", RegistryCode.NACOS.getCode());
     }
+    //Netty
+    @Bean
+    public RpcClient socketClient(){
+        return new NettyClient("127.0.0.1:8848", RegistryCode.NACOS.getCode());
+    }
+    
     public static void main(String[] args) {
         ApplicationContext applicationContext =
                 new AnnotationConfigApplicationContext(test.class);
