@@ -97,6 +97,7 @@ public class NettyServer extends AbstractRpcServer {
                         }
                     });
             ChannelFuture future = serverBootstrap.bind(host, port).sync();
+            logger.info("rpc服务启动成功");
             future.channel().closeFuture().sync();
         }catch (Exception e){
             logger.error("启动失败:"+e);

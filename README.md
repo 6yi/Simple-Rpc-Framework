@@ -16,6 +16,8 @@ Simple-RPC-Framework是一款多注册中心RPC框架 . 网络传输实现了基
 - 实现自定义的通信协议
 - 服务提供侧自动注册服务
 - 如果客户端和服务端均使用Netty通信，则会开启心跳监测机制保持连接，复用Channel
+#### 已集成SpringBoot支持
+[simple-spring-boot-starter项目地址](https://github.com/6yi/simple-rpc-spring-boot-starter)
 
 ## 模块说明
 

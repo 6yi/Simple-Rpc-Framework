@@ -1,9 +1,11 @@
 import cn.lzheng.rpc.annotation.RpcServiceScans;
 import cn.lzheng.rpc.enumeration.RegistryCode;
+
 import cn.lzheng.rpc.transport.JDKSocket.server.SocketServer;
 import cn.lzheng.rpc.transport.Netty.server.NettyServer;
 import org.junit.Test;
 import java.net.UnknownHostException;
+import java.util.List;
 
 
 /**
@@ -18,13 +20,15 @@ import java.net.UnknownHostException;
 public class RegistryTest {
 
     public static void main(String[] args) {
-        NettyServer nettyServer = new NettyServer("127.0.0.1",
-                RegistryCode.NACOS.getCode(),
-                "127.0.0.1:8848");
+//        NettyServer nettyServer = new NettyServer("127.0.0.1", RegistryCode.NACOS.getCode(), "127.0.0.1:8848");
 
-        nettyServer.start();
-//        SocketServer socketServer = new SocketServer("192.168.123.17","192.168.123.17:8848");
-//        socketServer.start();
+//        nettyServer.start();
+        new SocketServer("127.0.0.1",RegistryCode.NACOS.getCode(),"127.0.0.1:8848").start();
+
+    }
+
+    public static <T> List<T> fnc(T t){
+        return null;
     }
 
     @Test
